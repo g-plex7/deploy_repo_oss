@@ -1,0 +1,18 @@
+<div class="container">
+    <% @repos.each do |repo| %>
+    <div class="card index">
+        <div class="card-content">
+            <div class="content">
+              <h7 class="title is-6"><%= link_to repo.judul, repo %></h7>
+              <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+              <p>Username</p>
+              <p><%= repo.repo_information %></p>
+              <br>
+              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>
+
+

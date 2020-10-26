@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="header">
+        <h3 class="title is-4">Deploy OSS</h3>
+        <p class="subtitle is-5">deploy your repository address here and introduce it to the public</p>
+    </div>
+    <div class="card form-repo">
+            <%= form_for([@repo], html: { autocomplete: "off" }) do |form| %>
+                <% if @repo.errors.any? %>
+                    <div id="error_explanation">
+                        <h2><%= pluralize(@repo.errors.count, "error") %>prohibited this book from being saved: </h2>
+                
+
+                        <ul>
+                            <% @repo.errors.full_messages.each do |messages| %>
+                                <li><%= messages %></li>
+                            <% end %>
+                        </ul>
+                    </div>
+                <% end %>
+
+                <div class="form-field column is-10">
+                    <div class="field">
+                        <%= form.label :judul %>
+                        <%= form.text_field :judul, :class => "input " %>
+                    </div>
+
+                    <div class="field">
+                        <%= form.label 'Description' %>
+                        <%= form.text_area :desc, :class => "textarea" %>
+                    </div>
+
+                    <div class="field">
+                        <%= form.label :link %>
+                        <%= form.text_field :link, :class => "input " %>
+                    </div>
+                    
+                    <%= form.collection_check_boxes :repo_information, ['private', 'company'], :to_s, :to_s, 
+                        (@repo.repo_information.nil? ? {}: { checked: JSON.parse(@repo.repo_information.to_json).split(", ") }) do |f| %>
+                        <div class="custom-checkbox">
+                            <%= f.check_box class: "custom-control-input checkbox-item" %>
+                            <%= f.label class: 'custom-control-label' %>
+                        </div>
+                    <% end %>
+
+                    <div class="action">
+                        <%= form.submit "Deploy Repo", :class => "button is-black is-fullwidth has-text-weight-medium is-medium" %>
+                    </div>
+                </div>
+            <% end %>
+    </div>
+</div>

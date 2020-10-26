@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OssRepo</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar fixed">
+		<div class="container">
+			<div class="navbar-brand">
+				<a class="navbar-item" href="../">
+					<%= link_to image_tag("18534163591594721594-128", alt: "logo"), '/', class: 'navbar-brand' %>		
+				</a>
+				<span class="navbar-burger burger" data-target="navbarMenu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</div>
+			<div id="navbarMenu" class="navbar-menu">
+				<div class="navbar-end">
+					<form class="is-marginless">
+						<div class="navbar-item">
+						<input class="input" type="text" name="q"
+							placeholder="Search..." aria-label="Search">
+						&nbsp;
+						<button class="button is-black" 
+							type="submit">Search</button>
+						</div>
+					</form>
+					<% if current_user %>
+						<a class="navbar-item">Archives</a>
+						<a class="navbar-item">Forums</a>
+						<%= link_to 'Deploy Repo', new_repo_path, :class => 'navbar-item' %>
+						<div class="navbar-item has-dropdown is-hoverable is-black">
+							<a class="navbar-link"><%= current_user.username %></a>
+							<div class="navbar-dropdown ">
+								<a class="navbar-item">Profile</a>
+								<%= link_to 'Logout', session_path, method: :delete, :class => "navbar-item" %>
+							</div>
+						</div>
+					<% else %>
+						<%= link_to 'Sign Up', new_user_path, :class => "navbar-item" %>
+						<%= link_to 'Login', new_session_path, :class => "navbar-item" %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</nav>
+    <%= yield %>
+  </body>
+</html>
