@@ -17,22 +17,19 @@ class User < ApplicationRecord
   
   # omniauth_giyhub 
   def self.from_omniauth(auth)
-    user = User.find_or_create_by(provider: auth['provider'], uid: auth['uid'])
+    where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
+      user.provider = auth.provider 
+      user.uid = auth.uid 
+      user.oauth_token = auth.credentials.token
+      user.email = auth.info.email 
+      user.password = auth.info.password
 
-    user.provider = auth['provider']
-    user.uid = auth['uid']
-    user.oauth_token = auth['credentials']['token']
+    end 
+  end 
 
-    user.save 
-    user
-  end 
-  
-  def email_required? 
-    false 
-  end 
 
   # send password reste 
-  def send_password_reste
+  def send_password_reset
     generate_token(:password_reset_toke)
     self.password_reset_sent_at = Time.zone.now  
     save! 

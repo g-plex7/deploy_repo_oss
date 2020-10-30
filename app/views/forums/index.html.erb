@@ -1,3 +1,26 @@
 <div class="container">
-    <p>Forum is here</p>
+    <div class="container text-center">
+        <p class="title">Forum</p>       
+    </div>
+
+    <div class="column is-2 tanya">
+        <div class="compose has-text-centered ">
+                <%= link_to 'Ask Question', new_forum_path, :class => "button is-black is-block is-bold" %>
+        </div>
+    </div>
+
+    <div class="card forum">
+        <header class="card-header">
+            <p class="card-header-title">forum question</p>
+        </header>
+
+        <div class="card-content">
+            <div class="content">
+                Jest: Is there a way to mock an internal function inside of React component during testing
+            </div>
+            <br>
+            <%= image_tag('comment.png',  width: 20) %>
+            <%= image_tag('share.png', width: 20 ) %>
+        </div>
+    </div>
 </div>
