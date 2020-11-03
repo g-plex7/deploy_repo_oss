@@ -11,7 +11,7 @@ class ReposController < ApplicationController
   end 
 
   def create
-    @repo = Repo.new(repo_params)
+    @repo = current_user.repos.build(repo_params)
 
     if @repo.save 
       redirect_to @repo
@@ -40,6 +40,6 @@ class ReposController < ApplicationController
   end 
 
   def repo_params
-    params.require(:repo).permit(:link, :judul, :repo_information)
+    params.require(:repo).permit(:link, :judul, :repo_information, :user_id)
   end 
 end

@@ -7,11 +7,11 @@ class ForumsController < ApplicationController
     end 
 
     def new  
-        @repo = Repo.new 
+        @forum = Forum.new
     end 
 
     def create  
-        @forum = Forum.new(forum_params)
+        @forum = current_user.forums.build(forum_params)
 
         if @forum.save 
             redirect_to @forum 
@@ -40,6 +40,6 @@ class ForumsController < ApplicationController
     end 
 
     def forum_params
-        params.require(:forum).pemrit(:title, :question, :tag_list)
+        params.require(:forum).pemrit(:title, :question, :tag_list, :user_id)
     end 
 end

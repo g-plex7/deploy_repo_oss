@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resource :session, only: %i[new create destroy]
   resources :password_resets
   resources :repos
+  resources :comments
 
   # # routes from provider callbacks 
 match '/auth/:provider/callback', to: 'sessions#callback', :via => [:get, :post]

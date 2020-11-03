@@ -5,24 +5,6 @@
     </div>
 
     <div class="card form-login">
-        <div class="column is-11 form">
-            <%= form_with url: session_path, html: { autocomplete: "off" } do |f|%>
-                <div class="field">
-                    <%= f.label :email %>
-                    <%= f.text_field :email, :class => "input" %>
-                </div>
-
-                <div class="field">
-                    <%= f.label :password %>
-                    <%= f.password_field :password, :class => "input" %>
-                </div>
-
-                <div class="actions">
-                    <%= f.submit 'login', :class => "button is-block is-black is-fullwidth is-medium" %>
-                </div>
-            <% end %>
-            <br>
-            <p><%= link_to 'Forgot password?', new_password_reset_path %></p>
             <p><%= link_to 'Login With Github', '/auth/github' %></p>
         </div>
     </div>

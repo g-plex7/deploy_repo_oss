@@ -1,5 +1,31 @@
-<div class="container">
-    <div class="card">
-        <p> this is form </p>
+<div class="container ">
+    <div class="title">Ask Question</div>
+    <div class="column is-10 form-forum">
+        <div class="card">
+            <form>
+                <%= form_for([@forum], html: { autocomplete: "off" }) do |form| %>
+                    <div class="form-field column is-10">
+                        <div class="field">
+                            <%= form.label :title %>
+                            <%= form.text_field :title, :class => "input" %>
+                        </div>
+
+                        <div class="field">
+                            <%= form.label :question %>
+                            <%= form.text_area :question, :class => "textarea", :size => "30x10" %>
+                        </div>
+
+                        <div class="field">
+                            <%= form.label :tags %>
+                            <%= form.text_field :tag_list, :class => "input" %>
+                        </div>
+
+                        <div class="action">
+                            <%= form.submit "Ask Question", :class => "button is-black"  %>
+                        </div>
+                    </div>
+                <% end %>
+            </form>
+        </div>
     </div>
 </div>
