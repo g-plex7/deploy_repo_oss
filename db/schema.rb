@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_03_024724) do
+ActiveRecord::Schema.define(version: 2020_11_03_053646) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "respon"
@@ -31,13 +31,13 @@ ActiveRecord::Schema.define(version: 2020_11_03_024724) do
   end
 
   create_table "repos", id: :binary, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "link"
     t.string "judul"
     t.string "repo_information"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "desc"
     t.integer "user_id"
+    t.string "public_repo"
   end
 
   create_table "taggings", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -72,6 +72,8 @@ ActiveRecord::Schema.define(version: 2020_11_03_024724) do
     t.string "provider"
     t.text "uid"
     t.string "oauth_token"
+    t.string "public_repo"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

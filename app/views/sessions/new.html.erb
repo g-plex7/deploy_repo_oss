@@ -4,8 +4,11 @@
         <h2 class="title is-3">Login to Oss-Repo</h2>
     </div>
 
-    <div class="card form-login">
-            <p><%= link_to 'Login With Github', '/auth/github' %></p>
+    <div class="card form-login ">
+        <div class="column is-8 tombol">
+            <%= link_to image_tag("github (2).png"), '/auth/github', :class => "button is-block is-outlined is-fullwidth tombol1" %>
+            <br/>
+            <%= link_to image_tag("gitlab.png"), :class => "button is-block is-outlined is-fullwidth tombol1" %>
         </div>
     </div>
 </div>

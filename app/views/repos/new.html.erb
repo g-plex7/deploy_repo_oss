@@ -30,8 +30,8 @@
                     </div>
 
                     <div class="field">
-                        <%= form.label :link %>
-                        <%= form.text_field :link, :class => "input " %>
+                        <%= form.label :public_repo %>
+                        <%= form.text_field :public_repo, :class => "input " %>
                     </div>
                     
                     <%= form.collection_check_boxes :repo_information, ['private', 'company'], :to_s, :to_s, 

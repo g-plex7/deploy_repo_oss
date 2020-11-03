@@ -38,7 +38,7 @@
 						<%= link_to 'Forum', forums_path, :class => "navbar-item" %>
 						<%= link_to 'Deploy Repo', new_repo_path, :class => 'navbar-item' %>
 						<div class="navbar-item has-dropdown is-hoverable is-black">
-							<a class="navbar-link"><%= current_user.name %></a>
+							<a class="navbar-link"><%= current_user.name %> <%= current_user.image %></a>
 							<div class="navbar-dropdown ">
 								<a class="navbar-item">Profile</a>
 								<%= link_to 'Logout', session_path, method: :delete, :class => "navbar-item" %>
