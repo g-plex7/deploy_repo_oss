@@ -7,8 +7,8 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :provider
       t.text :uid
       t.string :oauth_token
-      t.string :public_repo
-      t.string :image
+      t.string :repo
+      t.attachment :image
 
       t.timestamps
     end

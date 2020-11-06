@@ -72,8 +72,11 @@ ActiveRecord::Schema.define(version: 2020_11_03_053646) do
     t.string "provider"
     t.text "uid"
     t.string "oauth_token"
-    t.string "public_repo"
-    t.string "image"
+    t.string "repo"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.bigint "image_file_size"
+    t.datetime "image_updated_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

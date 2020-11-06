@@ -7,7 +7,9 @@ class ReposController < ApplicationController
   end
 
   def new  
-    @repo = Repo.new
+    client = Octokit::Client.new
+    @user = @current_user.uid
+    client.repos
   end 
 
   def create
@@ -40,6 +42,6 @@ class ReposController < ApplicationController
   end 
 
   def repo_params
-    params.require(:repo).permit(:link, :judul, :repo_information, :user_id)
+    params.require(:repo).permit(:public_repo, :judul, :repo_information, :user_id)
   end 
 end

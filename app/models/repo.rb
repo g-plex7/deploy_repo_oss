@@ -1,5 +1,5 @@
 class Repo < ApplicationRecord
-    validates :link, presence: true
+    validates :public_repo, presence: true
     validates :judul, presence: true
 
     before_create :set_uuid 

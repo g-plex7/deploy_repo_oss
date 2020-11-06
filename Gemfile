@@ -34,6 +34,7 @@ gem 'paperclip'
 gem 'acts-as-taggable-on'
 gem 'dotenv-rails', groups: [:development, :test]
 gem "figaro"
+gem "octokit"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
