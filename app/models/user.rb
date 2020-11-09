@@ -18,6 +18,7 @@ class User < ApplicationRecord
             user.repo = auth['info']['repo']
         end 
     end
+    has_one :github_profile
 
     # database relation 
     has_many :repos
