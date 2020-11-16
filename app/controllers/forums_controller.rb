@@ -40,6 +40,6 @@ class ForumsController < ApplicationController
     end 
 
     def forum_params
-        params.require(:forum).pemrit(:title, :question, :tag_list, :user_id)
+        params.require(:forum).pemrit(:title, :question, :tag_list, :user_id, :image)
     end 
 end

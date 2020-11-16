@@ -28,13 +28,14 @@ gem 'omniauth', '~> 1.9', '>= 1.9.1'
 gem 'omniauth-oauth2', '~> 1.7'
 gem 'omniauth-github', '~> 1.4'
 gem 'omniauth-gitlab', '~> 2.0'
-gem 'devise'
 gem 'uuidtools', '~> 2.2'
-gem 'paperclip'
 gem 'acts-as-taggable-on'
 gem 'dotenv-rails', groups: [:development, :test]
 gem "figaro"
 gem "octokit"
+gem 'pry', '~> 0.13.1'
+gem 'paperclip'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
